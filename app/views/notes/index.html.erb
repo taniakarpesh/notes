@@ -9,20 +9,22 @@
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <thead>
-      <tr>
-            <th>Title</th>
-        <th></th>
-        <th></th>
-      </tr>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+    </tr>
     </thead>
 
     <tbody>
-      <%= content_tag_for(:tr, @notes) do |note| %>
-            <td><%= note.title %></td>
-            <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
+    <%= content_tag_for(:tr, @notes) do |note| %>
+      <td><%= note.title %></td>
+      <td><%= note.description %></td>
+      <td><%= link_to 'Show', note %></td>
+      <td><%= link_to 'Edit', edit_note_path(note) %></td>
+      <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
     </tbody>
   </table>
 </div>
